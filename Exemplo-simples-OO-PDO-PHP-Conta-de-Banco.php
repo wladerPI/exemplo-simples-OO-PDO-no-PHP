@@ -1,8 +1,7 @@
 <?php
-//   Exemplo Prático com Objetos
-
+//   Exemplo Prático com Objetos 
 // Exemplo Simples de Orientação a objetos e PDO no PHP Conta de Banco
-
+// Observação: É aconselhado criar as class e functions em outros arquivos e busca-los com "require", fica mais organizado e com menos codigos na pagina principal
 
 class ContaBanco {
 	public $numConta;
