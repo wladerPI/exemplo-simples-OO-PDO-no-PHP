@@ -1,6 +1,7 @@
 <?php
 //   Exemplo Simples de orientação a objetos e PDO em php 
 // funcionamento de um controle remoto da TV
+// Observação: É aconselhado criar as class e functions em outros arquivos e busca-los com "require", fica mais organizado e com menos codigos na pagina principal
 
 interface Controlador {
 	// metodo abstratos 
