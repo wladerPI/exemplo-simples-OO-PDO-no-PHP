@@ -59,7 +59,9 @@ class Video implements AcoesVideos {
 		$this->titulo = $titulo;
 	}
 	public function setAvaliacao($avaliacao) {
-		$this->avaliacao = $avaliacao;
+		$media = 0;
+		$media = ($this->avaliacao + $avaliacao)/$this->views; 
+		$this->avaliacao = $media;
 	}
 	public function setViews($views) {
 		$this->views = $views;
@@ -151,6 +153,55 @@ class Gafanhoto extends Pessoa {
 	}
 	
 }
+
+
+class visualizacao {
+	private $espectador;
+	private $filme;
+	
+	public function __construct($espectador, $filme) {
+		$this->espectador = $espectador;
+		$this->filme = $filme;
+		$this->filme->setViews($this->filme->getViews() +1);
+		$this->espectador->setTotAssistido($this->espectador->getTotAssistido() +1);
+	}
+	
+	public function avaliar() {
+		$this->filme->setAvaliacao(5);
+	}
+	public function avaliarNota($nota) {
+		$this->filme->setAvaliacao($nota);
+	}
+	public function avaliarPorc($porc) {
+		$nova = 0;
+		if ($porc <= 20){
+			$nova = 3;
+		} elseif($porc <= 50) {
+			$nova = 5;
+		} elseif($porc <= 90) {
+			$nova = 8;
+		} else {
+			$nova = 10;
+		}
+		$this->filme->setAvaliacao($nova);
+	}
+	
+	// Gets
+	public function getEspectador() {
+		return $this->espectador;
+	}
+	public function getFilme() {
+		return $this->filme;
+	}
+	
+	// Sets 
+	public function setEspectador($espectador) {
+		$this->espectador = $espectador;
+	}
+	public function setFilme($filme) {
+		$this->filme = $filme;
+	}
+}
 ?> 
 
 <!DOCTYPE html>
@@ -169,9 +220,13 @@ class Gafanhoto extends Pessoa {
 			$g[0] = new Gafanhoto("Jubileu", 22, "M", "juba");
 			$g[1] = new Gafanhoto("Creuza", 12, "F", "creuz");
 			
+			$vis[0] = new Visualizacao($g[1], $v[2]);
+			$vis[1] = new Visualizacao($g[1], $v[1]);
 			
-			print_r($v);
-			 print_r($g);
+			$vis[1]->avaliar();
+			$vis[0]->avaliarPorc(85);
+			
+			print_r($vis); print_r($vis2); 
 			
 		?> 
 		</pre>
