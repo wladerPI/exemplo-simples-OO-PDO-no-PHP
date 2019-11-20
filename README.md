@@ -1,6 +1,6 @@
 # Curso de PHP PDO Orientada ao Objeto 
 
-- Canal no Yotube-> 'Curso em Vídeo' LINK-> https://www.youtube.com/watch?v=KlIL63MeyMY&list=PLHz_AreHm4dmGuLII3tsvryMMD7VgcT7x&index=1
+- Canal no Youtube-> 'Curso em Vídeo' LINK-> https://www.youtube.com/watch?v=KlIL63MeyMY&list=PLHz_AreHm4dmGuLII3tsvryMMD7VgcT7x&index=1
 - Aproximadamente 25 horas de estudo e desenvolvimento.
 
 # Introdução
